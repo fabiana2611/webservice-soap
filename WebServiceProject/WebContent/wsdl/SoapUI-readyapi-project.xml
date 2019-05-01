@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="b962afd0-4293-4698-8d86-dd2033841b9f" created="2.6.0" activeEnvironment="Default environment" name="Project 1" resourceRoot="" updated="2.6.0 2019-01-14T14:47:06Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="b3302dae-debf-4b2c-b0e2-668e96ea6095" wsaVersion="NONE" name="HelloSoapBinding" type="wsdl" bindingName="{http://soap.webservice.webservice}HelloSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/fabiana/eclipse-workspace/WebServiceProject/WebContent/wsdl/Hello.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="file:/Users/fabiana/eclipse-workspace/WebServiceProject/WebContent/wsdl/Hello.wsdl">
+      <con:part>
+        <con:url>file:/Users/fabiana/eclipse-workspace/WebServiceProject/WebContent/wsdl/Hello.wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions targetNamespace="http://soap.webservice.webservice" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap.webservice.webservice" xmlns:intf="http://soap.webservice.webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema elementFormDefault="qualified" targetNamespace="http://soap.webservice.webservice" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="sayHello">
+        <complexType>
+          <sequence>
+            <element name="name" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element name="sayHelloResponse">
+        <complexType>
+          <sequence>
+            <element name="sayHelloReturn" type="xsd:string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part element="impl:sayHelloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHelloRequest">
+    <wsdl:part element="impl:sayHello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Hello">
+    <wsdl:operation name="sayHello">
+      <wsdl:input message="impl:sayHelloRequest" name="sayHelloRequest"></wsdl:input>
+      <wsdl:output message="impl:sayHelloResponse" name="sayHelloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloSoapBinding" type="impl:Hello">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayHello">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="sayHelloRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloService">
+    <wsdl:port binding="impl:HelloSoapBinding" name="Hello">
+      <wsdlsoap:address location="http://localhost:8080/WebServiceProject/services/Hello"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://localhost:8080/WebServiceProject/services/Hello</con:endpoint>
+    </con:endpoints>
+    <con:operation id="c2d92f9b-2ecf-4cc9-b550-4054abce9409" isOneWay="false" action="" name="sayHello" bindingOperationName="sayHello" type="Request-Response" outputName="sayHelloResponse" inputName="sayHelloRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="ea4b8078-d244-45b3-85ff-82162be6dddf" name="sayHello Request">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:8080/WebServiceProject/services/Hello</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="http://soap.webservice.webservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:sayHello>
+         <soap:name>?</soap:name>
+      </soap:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.webservice.webservice/Hello/sayHelloRequest"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:testSuite id="37af8f56-53bd-411e-a546-36e6b177a7db" name="Project 1 TestSuite 1">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="6be31c10-f507-46ed-a62a-9b67da87f1c3" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Project 1 TestCase 1" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="request" id="df3ea518-405a-452a-b291-3b97f24bf15e" name="HelloSoapBinding sayHello-sayHello Request">
+        <con:settings/>
+        <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:interface>HelloSoapBinding</con:interface>
+          <con:operation>sayHello</con:operation>
+          <con:request name="HelloSoapBinding sayHello-sayHello Request" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="c3e757d6-cd9f-4b75-9a3b-ccefde6de7bc">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:encoding>UTF-8</con:encoding>
+            <con:endpoint>http://localhost:8080/WebServiceProject/services/Hello</con:endpoint>
+            <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+   xmlns:soap="http://soap.webservice.webservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <soap:sayHello>
+         <soap:name>Malta</soap:name>
+      </soap:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+            <con:assertion type="SOAP Response" id="e19e9a55-7378-4933-8398-57163b434031" name="SOAP Response"/>
+            <con:assertion type="Valid HTTP Status Codes" id="c42e489b-0252-4a38-8320-e38bfaea5b37" name="Valid HTTP Status Codes">
+              <con:settings/>
+              <con:configuration>
+                <codes>200</codes>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="Schema Compliance" id="4798f1cf-5271-4339-807f-49f1476bb5b5" name="Schema Compliance">
+              <con:configuration/>
+            </con:assertion>
+            <con:assertion type="Response SLA Assertion" id="ccf5a34a-d3ff-4d30-910d-3aff0288f0fe" name="Response SLA">
+              <con:configuration>
+                <SLA>200</SLA>
+              </con:configuration>
+            </con:assertion>
+            <con:assertion type="SOAP Fault Assertion" id="d9c510fb-6143-46b0-ad02-e76491cac366" name="Not SOAP Fault"/>
+            <con:credentials>
+              <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:jmsPropertyConfig/>
+            <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://soap.webservice.webservice/Hello/sayHelloRequest"/>
+            <con:wsrmConfig version="1.2"/>
+          </con:request>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>

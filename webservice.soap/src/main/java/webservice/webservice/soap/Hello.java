@@ -1,0 +1,15 @@
+package webservice.webservice.soap;
+
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+
+@WebService
+public class Hello {
+
+	private String message = new String("Hello, ");
+
+    @WebMethod
+    public String sayHello(String name) {
+        return message + name + ".";
+    }
+}
